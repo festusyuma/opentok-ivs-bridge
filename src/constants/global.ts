@@ -1,0 +1,1 @@
+export const defaultResolution = '1280x720'

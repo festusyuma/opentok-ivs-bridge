@@ -1,0 +1,7 @@
+export const initBroadcastError = 'Error initialising broadcast channel'
+export const initTokenError = 'Error initialising tokens'
+export const invalidKeyError = 'Session key is invalid'
+export const noBroadcastError = 'Session key has no available broadcast'
+export const errorFetchingIvsKey = 'Error fetching IVS stream keys'
+export const invalidParam = 'Parameters are invalid'
+export const unknownError = 'An unknown server error occurred'

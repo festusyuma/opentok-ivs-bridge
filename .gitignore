@@ -1,0 +1,6 @@
+node_modules
+.env
+.idea/
+private-key.pem
+package-lock.json
+dist/
