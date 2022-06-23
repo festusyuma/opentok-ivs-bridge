@@ -53,7 +53,7 @@ export const generateOpentokToken = (
   mode: TokenMode,
   data: any
 ): string => opentok.generateToken(sessionId, {
-  role: mode === TokenMode.PRESENTER ? 'publisher' : 'subscriber',
+  role: 'publisher',
   data: JSON.stringify(data),
   expireTime: DateTime.now().plus({days: 7}).valueOf(),
   initialLayoutClassList: ["focus"],
