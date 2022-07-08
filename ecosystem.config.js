@@ -1,9 +1,12 @@
+const pm2App = (name, script = 'index.js') => ({
+  name,
+  instances: 1,
+  script: `./dist/${script}`,
+});
+
 module.exports = {
   apps: [
-    {
-      name: 'livestream-demo-api',
-      instances: 1,
-      script: './dist/index.js',
-    },
+    pm2App("staging.streamer.skillpaddy"),
+    pm2App("streamer.skillpaddy"),
   ]
-}
+};
