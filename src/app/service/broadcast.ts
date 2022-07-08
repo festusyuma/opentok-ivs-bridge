@@ -55,7 +55,7 @@ export const startBroadcast = (key: string): Promise<LiveBroadcast> =>
         id: key,
         sessionId: liveBroadcast.session.videoChannel,
         serverUrl: `rtmps://${injestUrl}:443/app/`,
-        streamName: `${injestKey}`
+        streamName: `${injestKey}`,
       })
 
       liveBroadcast.broadcastChannel = broadcast.id
@@ -93,6 +93,7 @@ export const endBroadcast = (key: string): Promise<boolean> =>
 export const createBroadcast = ({id, sessionId, serverUrl, streamName}: StartBroadcastParams): Promise<Broadcast> =>
   new Promise((resolve, reject) => {
     opentok.startBroadcast(sessionId, {
+      // @ts-ignore
       resolution: defaultResolution,
       outputs: {
         rtmp: [{
@@ -101,7 +102,11 @@ export const createBroadcast = ({id, sessionId, serverUrl, streamName}: StartBro
           streamName
         }]
       },
-      layout: {type: "bestFit"}
+      layout: {
+        type: "bestFit",
+        // @ts-ignore
+        screenshareType: "pip"
+      }
     }, (error, broadcast) => {
       if (error) reject(error)
       else resolve(broadcast)

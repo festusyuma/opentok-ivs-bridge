@@ -1,1 +1,1 @@
-export const defaultResolution = '1280x720'
+export const defaultResolution = '1920x1080'
