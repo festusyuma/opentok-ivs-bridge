@@ -6,7 +6,7 @@ const pm2App = (name, script = 'index.js') => ({
 
 module.exports = {
   apps: [
-    pm2App("staging.streamer.skillpaddy"),
-    pm2App("streamer.skillpaddy"),
+    pm2App("staging.streamer"),
+    pm2App("streamer"),
   ]
 };
